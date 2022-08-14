@@ -76,11 +76,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => DB_HOST,
-	'username' => DB_USER,
-	'password' => DB_PASS,
-	'database' => DB_NAME,
-	'dbdriver' => DB_DRIVER,
+	'hostname' => 'us-cdbr-east-06.cleardb.net',
+	'username' => 'b5855e8284fe16',
+	'password' => '09268e3d',
+	'database' => 'heroku_857bd6513d465ad',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

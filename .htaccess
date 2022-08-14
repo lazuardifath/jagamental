@@ -1,22 +1,12 @@
-<IfModule mod_rewrite.c>
-  Options -Indexes
-  Options +FollowSymlinks
-  RewriteEngine on
-  RewriteBase /
+Options -Indexes
 
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ /index.php?/$1 [L]
-</IfModule>
+# setup codeigniter remove index.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
 
-<IfModule !mod_rewrite.c>
-    # If we don't have mod_rewrite installed, all 404's
-    # can be sent to index.php, and everything works as normal.
-    # Submitted by: ElliotHaughin
-
-    ErrorDocument 404 /index.php
-</IfModule> 
-
+# setup no-cache
 <filesMatch "\.(css|jpg|jpeg|png|gif|js|ico)$">
   FileETag None
   <ifModule mod_headers.c>
@@ -26,5 +16,3 @@
      Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
   </ifModule>
 </filesMatch>
-
-
